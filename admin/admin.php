@@ -17,7 +17,7 @@ session_start();
 <table width="100%" border="0">
   <tr>
     <td id="header" height="90" colspan="3">
-<?php include("header.inc.php"); ?></td>
+<?php include("../mylibrary/header.inc.php"); ?></td>
   </tr>
   <tr>
     <td id="nav" width="20%" valign="top">
@@ -44,7 +44,7 @@ session_start();
   <tr>
     <td id="footer" colspan="3">
   <div align="center">
-  <?php include("footer.inc.php"); ?>
+  <?php include("../mylibrary/footer.inc.php"); ?>
   </div></td>
   </tr>
 </table>
