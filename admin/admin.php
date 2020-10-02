@@ -10,6 +10,7 @@ session_start();
 
 <?php
    include("../mylibrary/login.php");
+   include("../mylibrary/getThumb.php");
    $con = login();
 ?>
 
