@@ -5,25 +5,25 @@
    $price=$_POST['price'];
    $quantity=$_POST['quantity'];
 
-   if (get_magic_quotes_gpc())
-   {
-      $catid = stripslashes($catid);
-      $description = stripslashes($description);
-      $price = stripslashes($price);
-      $quantity = stripslashes($quantity);
-   }
-   $catid = mysql_real_escape_string($catid);
-   $description = mysql_real_escape_string($description);
-   $price = mysql_real_escape_string($price);
-   $quantity = mysql_real_escape_string($quantity);
+//    if (get_magic_quotes_gpc())
+//    {
+//       $catid = stripslashes($catid);
+//       $description = stripslashes($description);
+//       $price = stripslashes($price);
+//       $quantity = stripslashes($quantity);
+//    }
+   $catid = mysqli_real_escape_string($con, $catid);
+   $description = mysqli_real_escape_string($description);
+   $price = mysqli_real_escape_string($con, $price);
+   $quantity = mysqli_real_escape_string($con, $quantity);
 
    $thumbnail = getThumb($_FILES['picture']);
-   $thumbnail = mysql_real_escape_string($thumbnail);
+   $thumbnail = mysqli_real_escape_string($con, $thumbnail);
 
    $query = "INSERT INTO products (catid, description, picture, price, quantity) " .
             " VALUES ('$catid','$description','$thumbnail', '$price', '$quantity')";
 
-   $result = mysql_query($query) or die('Unable to add product');
+   $result = mysqli_query($query) or die('Unable to add product');
    if ($result)
       echo "<h2>New product added</h2>\n";
    else

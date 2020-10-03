@@ -13,9 +13,9 @@
 
    echo "<h2>Admin messages:</h2>\n";
 
-   if (is_readable("/mylibrary/dailymessages.txt"))
+   if (is_readable("../mylibrary/dailymessages.txt"))
    {
-      $message = file_get_contents("/mylibrary/dailymessages.txt");
+      $message = file_get_contents("../mylibrary/dailymessages.txt");
       $message = nl2br($message);
       echo $message;
    }

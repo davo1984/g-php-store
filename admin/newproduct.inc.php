@@ -12,8 +12,8 @@ if (!isset($_SESSION['store_admin']))
    echo "<tr><td>Category</td>\n";
    echo "<td><select name=\"cat\">\n";
    $query="SELECT catid,name from categories";
-   $result=mysql_query($query);
-   while($row=mysql_fetch_array($result,MYSQL_ASSOC))
+   $result=mysqli_query($query);
+   while($row=mysqli_fetch_array($result,MYSQLi_ASSOC))
    {
        $catid = $row['catid'];
        $name = $row['name'];

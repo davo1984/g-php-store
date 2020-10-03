@@ -2,14 +2,14 @@
 
    $catname = $_POST['catname'];
 
-   if (get_magic_quotes_gpc())
-   {
-      $catname = stripslashes($catname);
-   }
-   $catnameval = mysql_real_escape_string($catname);
+//    if (get_magic_quotes_gpc())
+//    {
+//       $catname = stripslashes($catname);
+//    }
+   $catnameval = mysqli_real_escape_string($con, $catname);
 
    $query="INSERT INTO categories (name) VALUES ('$catnameval')";
-   $result = mysql_query($query);
+   $result = mysqli_query($con, $query);
 
    if ($result)
       echo "<h2>New category '$catname' added</h2>\n";
