@@ -36,7 +36,7 @@
       $price = $row['price'];
       $quantity = $row['quantity'];
 
-      printf("<a href=\"admin.php?content=updateproduct&id;=$prodid\">%s</a>   - $%.2lf\n", $description, $price);
+      printf("<a href=\"admin.php?content=updateproduct&id=$prodid\">%s</a>   - $%.2lf\n", $description, $price);
       if ($quantity == 0)
          echo "  <font color=\"ff0000\">OUT OF STOCK</font><br>\n";
       else

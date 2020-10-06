@@ -1,5 +1,4 @@
 <?php
-
    $catid=$_POST['cat'];
    $description=$_POST['description'];
    $price=$_POST['price'];
@@ -13,7 +12,7 @@
 //       $quantity = stripslashes($quantity);
 //    }
    $catid = mysqli_real_escape_string($con, $catid);
-   $description = mysqli_real_escape_string($description);
+   $description = mysqli_real_escape_string($con, $description);
    $price = mysqli_real_escape_string($con, $price);
    $quantity = mysqli_real_escape_string($con, $quantity);
 
@@ -23,7 +22,7 @@
    $query = "INSERT INTO products (catid, description, picture, price, quantity) " .
             " VALUES ('$catid','$description','$thumbnail', '$price', '$quantity')";
 
-   $result = mysqli_query($query) or die('Unable to add product');
+   $result = mysqli_query($con, $query) or die('Unable to add product');
    if ($result)
       echo "<h2>New product added</h2>\n";
    else

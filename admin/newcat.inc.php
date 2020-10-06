@@ -1,5 +1,4 @@
 <?php
-
    if (!isset($_SESSION['store_admin']))
    {
       echo "<h2>Sorry, you have not logged into the system</h2>\n";

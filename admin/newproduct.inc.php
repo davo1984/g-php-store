@@ -12,15 +12,14 @@ if (!isset($_SESSION['store_admin']))
    echo "<tr><td>Category</td>\n";
    echo "<td><select name=\"cat\">\n";
    $query="SELECT catid,name from categories";
-   $result=mysqli_query($query);
-   while($row=mysqli_fetch_array($result,MYSQLi_ASSOC))
+   $result=mysqli_query($con, $query);
+   while($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
    {
        $catid = $row['catid'];
        $name = $row['name'];
        echo "<option value=\"$catid\">$name</option>\n";
    }
    echo "</select></td></tr>\n";
-
    echo "<tr><td>Description</td><td><input type=\"text\" size=\"40\" name=\"description\"></td></tr>\n";
    echo "<tr><td>Price</td><td><input type=\"text\" size=\"10\" name=\"price\"></td></tr>\n";
    echo "<tr><td>Quantity in stock</td><td><input type=\"text\" size=\"10\" name=\"quantity\"></td</tr>\n";
