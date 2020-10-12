@@ -1,6 +1,6 @@
 <?php
    header("Content-type: image/jpeg");
-   $con = mysqli_connect("localhost:8889", "test", "test", "store") or die('Error on line 3');
+   $con = mysqli_connect("localhost:8889", "test", "test", "store") or die('No DB connection, imageTestSingle.php');
 
    $query = "SELECT picture from products WHERE prodid = 4";
    $result = mysqli_query($con, $query);
