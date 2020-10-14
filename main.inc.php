@@ -4,15 +4,14 @@
 <p>Please feel free to browse our great selection of products. Select the category
 from the drop-down menu in the navigation bar. Add items to your cart, then check out.
 <p>
-
 <h2>Items on sale today:</h2>
 
 <?php
    $query = "SELECT * from products where onsale = TRUE";
-   $result = mysql_query($query);
+   $result = mysqli_query($con, $query);
 
    echo "<table width=\"100%\" border=\"0\">\n";
-   while($row=mysql_fetch_array($result, MYSQL_ASSOC))
+   while($row=mysqli_fetch_array($result, MYSQLI_ASSOC))
    {
       $prodid = $row['prodid'];
       $description = $row['description'];
@@ -20,13 +19,13 @@ from the drop-down menu in the navigation bar. Add items to your cart, then chec
       $quantity = $row['quantity'];
  
       echo "<tr><td>\n";
-         echo "<img src=\"admin/showimage.php?id=$prodid\" width=\"80\" height=\"60\">";
+         echo "<img src=\"showimage.php?id=$prodid\" width=\"80\" height=\"60\">";
       echo "</td><td>\n";
          if ($quantity == 0)
             echo "<font size=\"3\">$description</font>\n";
          else
          {
-            echo "<a href=\"index.php?&content;=updatecart&id;=$prodid\">";
+            echo "<a href=\"index.php?content=updatecart&id=$prodid\">";
             echo "<font size=\"3\"><b><u>$description</u></b></font>\n";
          }
       echo "</td><td>\n";
