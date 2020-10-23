@@ -1,5 +1,4 @@
 <h2>Welcome, new customer!</h2><br><br>
-
 <p>Please fill out this form so we can send you your products<p>
 <form action="addcust.php" method="post">
 <table width="50%" cellpadding="1" border="1">

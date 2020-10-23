@@ -1,19 +1,18 @@
 <?php
    session_start();
-
    include("mylibrary/login.php");
-   login();
+   $con = login();
 
    $email = $_POST['email'];
    $password = $_POST['password1'];
 
    $query = "SELECT * from customers where email = '$email' and password = PASSWORD('$password')";
-   $result = mysql_query($query);
-   $row = mysql_num_rows($result);
+   $result = mysqli_query($con, $query);
+   $row = mysqli_num_rows($result);
 
    if ($row)
    {
-      $row = mysql_fetch_array($result, MYSQL_ASSOC);
+      $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
       $custid = $row['custid'];
       $_SESSION['cust'] = $custid;
       header("Location: index.php?content=confirmorder");

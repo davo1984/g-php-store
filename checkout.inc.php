@@ -1,5 +1,4 @@
 <h2><u>Check Out Procedure</u></h2><br><br>
-
 <p>If you are a returning customer, please enter your e-mail address and password<p>
 <form action="verifycust.php" method="post">
 <table width="50%" cellpadding="1" border="1">

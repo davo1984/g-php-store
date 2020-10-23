@@ -1,5 +1,4 @@
 <?php
-
    echo "<h2><u>Confirming Order</u></h2><br>\n";
 
    $total = 0;
@@ -8,8 +7,8 @@
    foreach($_SESSION['cart'] as $prodid => $quantity)
    {
       $query = "SELECT description, price FROM products WHERE prodid = $prodid";
-      $result = mysql_query($query);
-      $row = mysql_fetch_array($result, MYSQL_ASSOC);
+      $result = mysqli_query($con, $query);
+      $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
       $description = $row['description'];
       $price = $row['price'];
 
