@@ -1,6 +1,5 @@
 <?php
    echo "<h2>Your shopping cart:</h2>\n";
-
    if (!isset($_SESSION['cart']))
    {
       $_SESSION['cart'] = array();
@@ -19,8 +18,8 @@
          foreach($_SESSION['cart'] as $prodid => $quantity)
          {
             $query = "SELECT description, price FROM products WHERE prodid = $prodid";
-            $result = mysql_query($query);
-            $row = mysql_fetch_array($result, MYSQL_ASSOC);
+            $result = mysqli_query($con, $query);
+            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $description = $row['description'];
             $price = $row['price'];
 
